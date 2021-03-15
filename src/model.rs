@@ -126,6 +126,8 @@ pub struct Order {
     pub price: f64,
     pub orig_qty: String,
     pub executed_qty: String,
+    #[serde(with = "string_or_float")]
+    pub cummulative_quote_qty: f64,
     pub status: String,
     pub time_in_force: String,
     #[serde(rename = "type")]
